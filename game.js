@@ -16,10 +16,8 @@ var config = {
 var game = new Phaser.Game(config);
 
 function preload() {
-    this.load.setBaseURL('http://labs.phaser.io');
-
+    this.load.image('leo', 'assets/sprites/Leo.png');
     this.load.image('sky', 'assets/skies/space3.png');
-    this.load.image('logo', 'assets/sprites/phaser3-logo.png');
     this.load.image('red', 'assets/particles/red.png');
 }
 
@@ -34,11 +32,11 @@ function create() {
         blendMode: 'ADD'
     });
 
-    var logo = this.physics.add.image(400, 100, 'logo');
+    var leo = this.physics.add.image(400, 100, 'leo');
 
-    logo.setVelocity(100, 200);
-    logo.setBounce(1, 1);
-    logo.setCollideWorldBounds(true);
+    leo.setVelocity(100, 200);
+    leo.setBounce(1, 1);
+    leo.setCollideWorldBounds(true);
 
-    emitter.startFollow(logo);
+    emitter.startFollow(leo);
 }
